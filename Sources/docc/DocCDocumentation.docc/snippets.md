@@ -4,13 +4,25 @@ Create and include code snippets to illustrate and provide examples of how to us
 
 ## Overview
 
-...tbd...
-- Describe the problem and summarize the developer action.
-- Explain why the problem is relevant and provide context for the task. Don't simply repeat the abstract; expand on it.
-- Keep the Overview to one or two paragraphs.
-- For very short articles that consist of just a couple of paragraphs, all of the content can be in the Overview.
+Code listings allow you to provide code samples alongside the natural language documentation for
+an API. You can create a code listing using the markdown syntax for codeblocks:
 
-...tbd...
+```swift
+/// Multiplies two numbers
+///
+/// ```swift
+/// let twelve = multiply(3, 4)
+/// ```
+func multiply(_ lhs: Int, _ rhs: Int) -> Int {
+  a * b
+}
+```
+
+Code listings, while helpful, have some shortcomings:
+- Maintaining accurate listings is difficult as an API grows and changes.
+- Editor support is lacking. Autocomplete, for example, isn't supported for code inside a documentation block.
+
+Snippets are short, single-file examples that can be built, run, and embedded in DocC articles and symbol reference pages.
 
 ### Create a code snippet
 
