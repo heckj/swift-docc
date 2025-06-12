@@ -1,0 +1,5 @@
+Integration Test for Docc & Docc-render
+
+- sample docc catalog(s) to generate
+- locally host the docc content, maybe akin to preview, locally
+- drive Playwright to read/render the content (through Safari, Chrome?) and verify content exists as expected.
