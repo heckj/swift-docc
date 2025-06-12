@@ -1,5 +1,19 @@
 Integration Test for Docc & Docc-render
 
-- sample docc catalog(s) to generate
-- locally host the docc content, maybe akin to preview, locally
-- drive Playwright to read/render the content (through Safari, Chrome?) and verify content exists as expected.
+- [ ] sample docc catalog(s) to generate
+  - [ ] swift package w/ docc catalog
+  - [ ] two or three targets, where one depends on/builds on another
+  - [ ] (maybe explore adding traits to enable one of the targets)
+  - [ ] at least one of each of the common types within Swift
+  - [ ] an example where there's overloaded methods w/ different types
+  - [ ] include media (basic image)
+
+  some of this can be assembled/borrowed from DocC unit tests and its sample catalogs, although those are
+  intentionally broken up, rather than combining all the relevant pieces into a single catalog.
+
+- [ ] locally build and host the docc content, maybe directly using docc-plugin's preview-documentation.
+
+  make this usable from within a container
+ 
+- [ ] drive Playwright to read/render the content (through Safari, Chrome?) and verify content exists as expected.
+  - [ ] dockerfile (or container) build for this scenario - run headless playwright or w/ fbm to process content
