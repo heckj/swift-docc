@@ -4,11 +4,11 @@ This article tests the inclusion of snippets and snippet slices.
 
 This is a snippet.
 
-@Snippet(path: "Snippets/Snippets/MySnippet")
+@Snippet(path: "Test/Snippets/MySnippet")
 
 This is a slice of the above snippet, called "foo".
 
-@Snippet(path: "Snippets/Snippets/MySnippet", slice: "foo")
+@Snippet(path: "Test/Snippets/MySnippet", slice: "foo")
 
 This is a snippet nested inside a tab navigator.
 
@@ -34,7 +34,7 @@ This is a snippet nested inside a tab navigator.
             Hey but small.
         }
 
-        @Snippet(path: "Snippets/Snippets/MySnippet", slice: "middle") {}
+        @Snippet(path: "Test/Snippets/MySnippet", slice: "middle") {}
     }
 }
 

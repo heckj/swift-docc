@@ -22,6 +22,6 @@ and not:
   middle()
 ```
 
-@Snippet(path: "Snippets/Snippets/MySnippet", slice: "middle")
+@Snippet(path: "Test/Snippets/MySnippet", slice: "middle")
 
 <!-- Copyright (c) 2022 Apple Inc and the Swift Project authors. All Rights Reserved. -->

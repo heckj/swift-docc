@@ -1,32 +1,26 @@
 {
-  "metadata": {
-    "generator": "SwiftPM",
-    "formatVersion": {
-      "major": 0,
-      "minor": 1,
-      "patch": 0
-    }
-  },
-  "relationships": [
-    {
-      "kind": "memberOf",
-      "source": "$snippet__Test.Snippets.MySnippet",
-      "target": "$snippet__Test.Snippets",
-      "targetFallback": null
-    }
-  ],
   "symbols": [
     {
+      "identifier": {
+        "precise": "$snippet__Test.MySnippet",
+        "interfaceLanguage": "swift"
+      },
+      "pathComponents": [
+        "Snippets",
+        "MySnippet"
+      ],
+      "names": {
+        "title": "MySnippet"
+      },
       "isVirtual": true,
       "docComment": {
         "lines": [
           {
-            "text": "Does a foo. "
+            "text": "Does a foo."
           }
         ]
       },
       "snippet": {
-        "language": "swift",
         "lines": [
           "func foo() {}",
           "",
@@ -41,37 +35,36 @@
             0,
             1
           ],
-          "middle": [
-            3,
-            4
-          ],
           "bar": [
             6,
             7
+          ],
+          "middle": [
+            3,
+            4
           ]
-        }
-      },
-      "identifier": {
-        "precise": "$snippet__Test.Snippets.MySnippet",
-        "interfaceLanguage": "swift"
-      },
-      "kind": {
-        "displayName": "Snippet",
-        "identifier": "snippet"
+        },
+        "language": "swift"
       },
       "accessLevel": "public",
-      "pathComponents": [
-        "Snippets",
-        "MySnippet"
-      ],
-      "names": {
-        "title": "MySnippet"
+      "kind": {
+        "identifier": "snippet",
+        "displayName": "Snippet"
       }
     }
   ],
+  "relationships": [],
+  "metadata": {
+    "formatVersion": {
+      "patch": 0,
+      "major": 0,
+      "minor": 1
+    },
+    "generator": "snippet-extract"
+  },
   "module": {
-    "name": "Snippets",
     "platform": {},
-    "isVirtual": true
+    "isVirtual": true,
+    "name": "Test"
   }
 }

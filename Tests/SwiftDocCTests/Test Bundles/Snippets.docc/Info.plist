@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Snippets</string>
+	<string>Test</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.swift.docc.snippets</string>
 	<key>CDDefaultCodeListingLanguage</key>

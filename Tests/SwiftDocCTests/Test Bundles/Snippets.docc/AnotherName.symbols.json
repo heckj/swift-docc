@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "formatVersion": {
+      "major": 0,
+      "minor": 6,
+      "patch": 0
+    },
+    "generator": "Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)"
+  },
+  "module": {
+    "name": "AnotherName",
+    "platform": {
+      "architecture": "arm64",
+      "vendor": "apple",
+      "operatingSystem": {
+        "name": "macosx",
+        "minimumVersion": {
+          "major": 10,
+          "minor": 13
+        }
+      }
+    }
+  },
+  "symbols": [
+    {
+      "kind": {
+        "identifier": "swift.struct",
+        "displayName": "Structure"
+      },
+      "identifier": {
+        "precise": "s:11AnotherName6SimpleV",
+        "interfaceLanguage": "swift"
+      },
+      "pathComponents": [
+        "Simple"
+      ],
+      "names": {
+        "title": "Simple",
+        "navigator": [
+          {
+            "kind": "identifier",
+            "spelling": "Simple"
+          }
+        ],
+        "subHeading": [
+          {
+            "kind": "keyword",
+            "spelling": "struct"
+          },
+          {
+            "kind": "text",
+            "spelling": " "
+          },
+          {
+            "kind": "identifier",
+            "spelling": "Simple"
+          }
+        ]
+      },
+      "declarationFragments": [
+        {
+          "kind": "keyword",
+          "spelling": "struct"
+        },
+        {
+          "kind": "text",
+          "spelling": " "
+        },
+        {
+          "kind": "identifier",
+          "spelling": "Simple"
+        }
+      ],
+      "accessLevel": "public",
+      "location": {
+        "uri": "file:///Users/joeheck/Desktop/Test/Sources/AnotherName/AnotherName.swift",
+        "position": {
+          "line": 0,
+          "character": 14
+        }
+      }
+    },
+    {
+      "kind": {
+        "identifier": "swift.property",
+        "displayName": "Instance Property"
+      },
+      "identifier": {
+        "precise": "s:11AnotherName6SimpleV4nameSSvp",
+        "interfaceLanguage": "swift"
+      },
+      "pathComponents": [
+        "Simple",
+        "name"
+      ],
+      "names": {
+        "title": "name",
+        "subHeading": [
+          {
+            "kind": "keyword",
+            "spelling": "var"
+          },
+          {
+            "kind": "text",
+            "spelling": " "
+          },
+          {
+            "kind": "identifier",
+            "spelling": "name"
+          },
+          {
+            "kind": "text",
+            "spelling": ": "
+          },
+          {
+            "kind": "typeIdentifier",
+            "spelling": "String",
+            "preciseIdentifier": "s:SS"
+          }
+        ]
+      },
+      "declarationFragments": [
+        {
+          "kind": "keyword",
+          "spelling": "var"
+        },
+        {
+          "kind": "text",
+          "spelling": " "
+        },
+        {
+          "kind": "identifier",
+          "spelling": "name"
+        },
+        {
+          "kind": "text",
+          "spelling": ": "
+        },
+        {
+          "kind": "typeIdentifier",
+          "spelling": "String",
+          "preciseIdentifier": "s:SS"
+        }
+      ],
+      "accessLevel": "public",
+      "location": {
+        "uri": "file:///Users/joeheck/Desktop/Test/Sources/AnotherName/AnotherName.swift",
+        "position": {
+          "line": 1,
+          "character": 15
+        }
+      }
+    },
+    {
+      "kind": {
+        "identifier": "swift.method",
+        "displayName": "Instance Method"
+      },
+      "identifier": {
+        "precise": "s:11AnotherName6SimpleV5speakyyF",
+        "interfaceLanguage": "swift"
+      },
+      "pathComponents": [
+        "Simple",
+        "speak()"
+      ],
+      "names": {
+        "title": "speak()",
+        "subHeading": [
+          {
+            "kind": "keyword",
+            "spelling": "func"
+          },
+          {
+            "kind": "text",
+            "spelling": " "
+          },
+          {
+            "kind": "identifier",
+            "spelling": "speak"
+          },
+          {
+            "kind": "text",
+            "spelling": "()"
+          }
+        ]
+      },
+      "functionSignature": {
+        "returns": [
+          {
+            "kind": "text",
+            "spelling": "()"
+          }
+        ]
+      },
+      "declarationFragments": [
+        {
+          "kind": "keyword",
+          "spelling": "func"
+        },
+        {
+          "kind": "text",
+          "spelling": " "
+        },
+        {
+          "kind": "identifier",
+          "spelling": "speak"
+        },
+        {
+          "kind": "text",
+          "spelling": "()"
+        }
+      ],
+      "accessLevel": "public",
+      "location": {
+        "uri": "file:///Users/joeheck/Desktop/Test/Sources/AnotherName/AnotherName.swift",
+        "position": {
+          "line": 3,
+          "character": 16
+        }
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "kind": "memberOf",
+      "source": "s:11AnotherName6SimpleV4nameSSvp",
+      "target": "s:11AnotherName6SimpleV"
+    },
+    {
+      "kind": "memberOf",
+      "source": "s:11AnotherName6SimpleV5speakyyF",
+      "target": "s:11AnotherName6SimpleV"
+    }
+  ]
+}
