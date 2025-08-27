@@ -68,7 +68,14 @@ extension Snippet: RenderableDirectiveConvertible {
         guard let snippet = Snippet(from: originalMarkup, for: contentCompiler.bundle) else {
                 return []
             }
+            print("resolving \(snippet.path)")
             
+            print("context graph:")
+            print(contentCompiler.context.dumpGraph())
+
+            let maybeResolvedReference = contentCompiler.resolveSymbolReference(destination: snippet.path)
+            print("resolved to \(String(describing: maybeResolvedReference))")
+
             guard let snippetReference = contentCompiler.resolveSymbolReference(destination: snippet.path),
                   let snippetEntity = try? contentCompiler.context.entity(with: snippetReference),
                   let snippetSymbol = snippetEntity.symbol,

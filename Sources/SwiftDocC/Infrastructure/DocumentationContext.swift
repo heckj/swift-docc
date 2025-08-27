@@ -970,7 +970,7 @@ public class DocumentationContext {
         let results: [AddSymbolResultWithProblems] = symbols.concurrentPerform { symbol, results in
             if let selector = symbol.defaultSelector, let module = symbol.modules[selector] {
                 guard let reference = symbolReferences[symbol.defaultIdentifier] else {
-                    fatalError("Symbol with identifier '\(symbol.uniqueIdentifier)' has no reference. A symbol will always have at least one reference.")
+                    fatalError("Symbol with identifier '\(symbol.uniqueIdentifier)' (defaultIdentifier: \(symbol.defaultIdentifier)) has no reference. A symbol will always have at least one reference.")
                 }
                 
                 results.append(preparedSymbolData(
@@ -1014,6 +1014,10 @@ public class DocumentationContext {
                 signposter.endInterval("Register symbols", signpostHandle)
             }
             
+            // BUG1208 DEBUG
+            print("Locations of graphs")
+            print(symbolGraphLoader.graphLocations)
+            print()
             /// We need only unique relationships so we'll collect them in a set.
             var combinedRelationshipsBySelector = [UnifiedSymbolGraph.Selector: Set<SymbolGraph.Relationship>]()
             /// Also track the unique relationships across all languages and platforms
@@ -1025,6 +1029,7 @@ public class DocumentationContext {
             
             // Build references for all symbols in all of this module's symbol graphs.
             let symbolReferences = signposter.withIntervalSignpost("Disambiguate references") {
+                // BUG 1280 - this is where *ALL* symbols should be loading for possible resolution, but snippet symbols appear to be missing.
                 linkResolver.localResolver.referencesForSymbols(in: symbolGraphLoader.unifiedGraphs, bundle: bundle, context: self)
             }
             
@@ -1070,6 +1075,9 @@ public class DocumentationContext {
                     
                     try mergeSymbolDeclarations(from: unifiedSymbolGraph, references: symbolReferences, moduleReference: moduleReference, fileURL: fileURL)
                 } else {
+                    // BUG1280 - with the symbolKit updates, a snippet symbolgraph isn't going to return true for having a primary URL
+                    // unclear what this is guarding against, and why we don't try to load the symbols from non-primary graphs.
+                    // I think we may want to make an explicit exception for a snippet graph, if we have a clear way to identify it.
                     guard symbolGraphLoader.hasPrimaryURL(moduleName: moduleName) else { continue }
                     
                     // Create a module symbol
@@ -1093,6 +1101,8 @@ public class DocumentationContext {
                     moduleReference = ResolvedTopicReference(symbolReference: moduleSymbolReference, moduleName: moduleName, bundle: bundle)
                     
                     signposter.withIntervalSignpost("Add symbols to topic graph", id: signposter.makeSignpostID()) {
+                        // BUG 1280 - if we attempt to load in symbols from a snippet graph, this call fails with a fatal error, as
+                        // the symbols don't appear to be loaded into symbolReferences either.
                         addSymbolsToTopicGraph(symbolGraph: unifiedSymbolGraph, url: fileURL, symbolReferences: symbolReferences, moduleReference: moduleReference)
                     }
                     
