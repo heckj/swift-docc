@@ -961,7 +961,7 @@ class RenderNodeTranslatorTests: XCTestCase {
 
     func testSnippetToCodeListing() async throws {
         let (bundle, context) = try await testBundleAndContext(named: "Snippets")
-        let reference = ResolvedTopicReference(bundleID: bundle.id, path: "/documentation/Snippets/Snippets", sourceLanguage: .swift)
+        let reference = ResolvedTopicReference(bundleID: bundle.id, path: "/documentation/Test/Snippets", sourceLanguage: .swift)
         let article = try XCTUnwrap(context.entity(with: reference).semantic as? Article)
         var translator = RenderNodeTranslator(context: context, bundle: bundle, identifier: reference)
         let renderNode = try XCTUnwrap(translator.visitArticle(article) as? RenderNode)
@@ -991,7 +991,7 @@ class RenderNodeTranslatorTests: XCTestCase {
     
     func testSnippetSliceToCodeListing() async throws {
         let (bundle, context) = try await testBundleAndContext(named: "Snippets")
-        let reference = ResolvedTopicReference(bundleID: bundle.id, path: "/documentation/Snippets/Snippets", sourceLanguage: .swift)
+        let reference = ResolvedTopicReference(bundleID: bundle.id, path: "/documentation/Test/Snippets", sourceLanguage: .swift)
         let article = try XCTUnwrap(context.entity(with: reference).semantic as? Article)
         var translator = RenderNodeTranslator(context: context, bundle: bundle, identifier: reference)
         let renderNode = try XCTUnwrap(translator.visitArticle(article) as? RenderNode)
@@ -1015,7 +1015,7 @@ class RenderNodeTranslatorTests: XCTestCase {
 
     func testNestedSnippetSliceToCodeListing() async throws {
         let (bundle, context) = try await testBundleAndContext(named: "Snippets")
-        let reference = ResolvedTopicReference(bundleID: bundle.id, path: "/documentation/Snippets/Snippets", sourceLanguage: .swift)
+        let reference = ResolvedTopicReference(bundleID: bundle.id, path: "/documentation/Test/Snippets", sourceLanguage: .swift)
         let article = try XCTUnwrap(context.entity(with: reference).semantic as? Article)
         var translator = RenderNodeTranslator(context: context, bundle: bundle, identifier: reference)
         let renderNode = try XCTUnwrap(translator.visitArticle(article) as? RenderNode)
@@ -1046,7 +1046,7 @@ class RenderNodeTranslatorTests: XCTestCase {
     
     func testSnippetSliceTrimsIndentation() async throws {
         let (bundle, context) = try await testBundleAndContext(named: "Snippets")
-        let reference = ResolvedTopicReference(bundleID: bundle.id, path: "/documentation/Snippets/SliceIndentation", sourceLanguage: .swift)
+        let reference = ResolvedTopicReference(bundleID: bundle.id, path: "/documentation/Test/SliceIndentation", sourceLanguage: .swift)
         let article = try XCTUnwrap(context.entity(with: reference).semantic as? Article)
         var translator = RenderNodeTranslator(context: context, bundle: bundle, identifier: reference)
         let renderNode = try XCTUnwrap(translator.visitArticle(article) as? RenderNode)
